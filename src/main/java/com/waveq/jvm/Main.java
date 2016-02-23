@@ -21,7 +21,7 @@ public class Main  {
 			}
 		} else if (answer.equals("2")) {
 			try {
-				stackOverFlow();
+				stackOverflow();
 			} catch(StackOverflowError e) {
 				System.out.println(String.format("Done %s invokes.\n", counter) + e);
 			}
@@ -36,17 +36,8 @@ public class Main  {
 		}
 	}
 
-	private static void  stackOverFlow() {
-		firstMethod();
-	}
-
-	private static void  firstMethod() {
+	private static void stackOverflow() {
 		counter++;
-		secondMethod();
-	}
-
-	private static void secondMethod() {
-		counter++;
-		firstMethod();
+		stackOverflow();
 	}
 }
