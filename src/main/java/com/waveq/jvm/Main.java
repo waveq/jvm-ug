@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main  {
 	static Scanner scanner = new Scanner(System.in);
-	static List<String> first = new ArrayList<>();
+	static List<String> outOfMemoryList = new ArrayList<>();
 	static int counter = 0;
 
 	public static void main(String args[]) {
@@ -32,21 +32,21 @@ public class Main  {
 	private static void outOfMemory() {
 		while(true) {
 			counter++;
-			first.add("memory");
+			outOfMemoryList.add("memory");
 		}
 	}
 
 	private static void  stackOverFlow() {
-		first();
+		firstMethod();
 	}
 
-	private static void  first() {
+	private static void  firstMethod() {
 		counter++;
-		second();
+		secondMethod();
 	}
 
-	private static void second() {
+	private static void secondMethod() {
 		counter++;
-		first();
+		firstMethod();
 	}
 }
