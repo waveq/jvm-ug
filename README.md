@@ -6,7 +6,7 @@ Pamięć przeznaczoną na wykonanie programu można zwiększyć poprzez dodanie 
 
 
 ### StackOverflowError
-Miejsce na stosie na którym były przetrzymywane informacje o wywołaniach wyczerpało się z powodu nieprzerwanego wywoływania się metody stackOverflowg.
+Miejsce na stosie na którym były przetrzymywane informacje o wywołaniach wyczerpało się z powodu nieprzerwanego wywoływania się metody stackOverflow.
 
 ### Wykonanie programu
 ```mvn exec:java```
