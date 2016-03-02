@@ -1,12 +1,7 @@
 # jvm-ug
 
-### OutOfMemoryError
-W nieskończonej pętli dodawane były do listy obiekty typu String spowodowało to, że pamięć jaka była przeznaczona na wykonanie programu się wyczerpała, co poskutkowało wyrzuceniem wyjątku **OutOfMemoryError**.
-Pamięć przeznaczoną na wykonanie programu można zwiększyć poprzez dodanie flagi `-Xmxsize`.
-
-
-### StackOverflowError
-Miejsce na stosie na którym były przetrzymywane informacje o wywołaniach wyczerpało się z powodu nieprzerwanego wywoływania się metody stackOverflow.
-
 ### Wykonanie programu
-```mvn exec:java```
+Niestety plugin sparka gryzł się z exec-maven-plugin dlatego by uruchomić aplikację należy zaimportować projekt do Eclipse/IntelliJ,
+następnie uruchomić klasę rest.RestApp, która jest serwerem. Po tym możemy do woli uruchamiać(również z wyżej wymienionych środowisk) klasę client.Main :frog:
+
+Spark Wystawia restApi pod adresem `0.0.0.0:4567/SampleImplementation.class`
