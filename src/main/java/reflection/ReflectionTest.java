@@ -5,6 +5,7 @@ import object.FunnyObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ReflectionTest {
@@ -14,7 +15,7 @@ public class ReflectionTest {
 
 	private static final int EXAMPLE_INT_VALUE = 99;
 	private static final String EXAMPLE_STRING_VALUE = "Bum, bum, bum.";
-	private static final long NUMBER_OF_INVOKES = 100000;
+	private static final long NUMBER_OF_INVOKES = 10000;
 
 	private static final String INIT_MESSAGE = "\n\n================================\n\nSTARTING %s ITERATION OF TESTS\n\n#> Invoke number set to %s.";
 	private static final String REFLECTION_TESTS_INIT = "#> Starting reflection tests.\n";
@@ -49,7 +50,6 @@ public class ReflectionTest {
 	private static List<Long> methodReflection = new ArrayList<>();
 	private static List<Long> allReflection = new ArrayList<>();
 
-
 	public static void main(String args[]) {
 
 		for(int i = 1;i<=10;i++) {
@@ -57,6 +57,7 @@ public class ReflectionTest {
 			performNativeTests();
 			performReflectionTests();
 		}
+		deleteWorstAndBestResults();
 		presentResults();
 
 	}
@@ -76,13 +77,33 @@ public class ReflectionTest {
 		System.out.println(String.format(RESULTS_TEMPLATE, NATIVE, GET_PUBLIC, getNativeAveraged));
 		System.out.println(String.format(RESULTS_TEMPLATE, NATIVE, SET_PUBLIC, setNativeAveraged));
 		System.out.println(String.format(RESULTS_TEMPLATE, NATIVE, INVOKE_METHOD, methodNativeAveraged));
-		System.out.println(String.format(RESULTS_TEMPLATE, NATIVE, ALL_TESTS, allNativeAveraged));
+		//System.out.println(String.format(RESULTS_TEMPLATE, NATIVE, ALL_TESTS, allNativeAveraged));
 
 		System.out.println();
 		System.out.println(String.format(RESULTS_TEMPLATE, REFLECTION, GET_PUBLIC, getReflectionAveraged));
 		System.out.println(String.format(RESULTS_TEMPLATE, REFLECTION, SET_PUBLIC, setReflectionAveraged));
 		System.out.println(String.format(RESULTS_TEMPLATE, REFLECTION, INVOKE_METHOD, methodReflectionAveraged));
-		System.out.println(String.format(RESULTS_TEMPLATE, REFLECTION, ALL_TESTS, allReflectionAveraged));
+		//System.out.println(String.format(RESULTS_TEMPLATE, REFLECTION, ALL_TESTS, allReflectionAveraged));
+	}
+
+	private static void deleteWorstAndBestResults() {
+		getNative.remove(getNative.indexOf(Collections.min(getNative)));
+		getNative.remove(getNative.indexOf(Collections.max(getNative)));
+		setNative.remove(setNative.indexOf(Collections.min(setNative)));
+		setNative.remove(setNative.indexOf(Collections.max(setNative)));
+		methodNative.remove(methodNative.indexOf(Collections.min(methodNative)));
+		methodNative.remove(methodNative.indexOf(Collections.max(methodNative)));
+		allNative.remove(allNative.indexOf(Collections.min(allNative)));
+		allNative.remove(allNative.indexOf(Collections.max(allNative)));
+
+		getReflection.remove(getReflection.indexOf(Collections.min(getReflection)));
+		getReflection.remove(getReflection.indexOf(Collections.max(getReflection)));
+		setReflection.remove(setReflection.indexOf(Collections.min(setReflection)));
+		setReflection.remove(setReflection.indexOf(Collections.max(setReflection)));
+		methodReflection.remove(methodReflection.indexOf(Collections.min(methodReflection)));
+		methodReflection.remove(methodReflection.indexOf(Collections.max(methodReflection)));
+		allReflection.remove(allReflection.indexOf(Collections.min(allReflection)));
+		allReflection.remove(allReflection.indexOf(Collections.max(allReflection)));
 	}
 
 	private static void printConfigurtion(int iteration) {
