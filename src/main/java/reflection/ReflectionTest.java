@@ -33,14 +33,14 @@ public class ReflectionTest {
 	public static void main(String args[]) {
 		printConfigurtion();
 		performReflectionTests();
-		performTests();
+		performNativeTests();
 	}
 
 	private static void printConfigurtion() {
 		System.out.println(String.format(INIT_MESSAGE, NUMBER_OF_INVOKES));
 	}
 
-	private static void performTests() {
+	private static void performNativeTests() {
 		System.out.println(NATIVE_TESTS_INIT);
 		allTestsStartTime = System.nanoTime();
 
