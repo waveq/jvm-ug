@@ -8,7 +8,7 @@ Program iterował dziesięciokrotnie w pętli, w każdej z nich wykonywane były
 
 Najgorsze i najlepsze czasy nie są uwzględniane w wynikach. 
 
-Aplikacja została uruchomiona ze środowiska IntelliJ IDEA.
+Aplikacja została uruchomiona w środowisku IntelliJ IDEA.
 
 ```
 Native get public value, averaged:            7486064
