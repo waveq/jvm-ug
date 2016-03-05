@@ -12,9 +12,9 @@ Aplikacja została uruchomiona w środowisku IntelliJ IDEA.
 
 
 ```
-Native get public value, averaged:            7486064 ns = 0.007 s 
-Native set public value, averaged:            8046402 ns = 0.008 s
-Native invoke method, averaged:               5874937 ns = 0.005 s
+Native get public value, averaged:            7486064 ns    = 0.007 s 
+Native set public value, averaged:            8046402 ns    = 0.008 s
+Native invoke method, averaged:               5874937 ns    = 0.005 s
 
 Reflection get public value, averaged:        1636231257 ns = 1.636 s
 Reflection set public value, averaged:        1683529238 ns = 1.683 s
