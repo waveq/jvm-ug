@@ -3,7 +3,7 @@
 ### Wykonanie programu
 `mvn exec:java`
 
-### Informacje o maszynie:
+### Informacje o maszynie na której wykonywane były testy:
 ```
 Procesor: 2,6 GHz Intel Core i7
 Pamięć: 16 GB 1600 MHz DDR3
