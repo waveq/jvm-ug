@@ -3,6 +3,14 @@
 ### Wykonanie programu
 `mvn exec:java`
 
+### Informacje o maszynie:
+```
+Procesor: 2,6 GHz Intel Core i7
+Pamięć: 16 GB 1600 MHz DDR3
+Dysk: SSD
+System: OS X Yosemite 10.10.5
+```
+
 ### Przebieg testu: 
 Program iterował dziesięciokrotnie w pętli, w każdej z nich wykonywane były następujące czynności: `odczytanie publicznej wartości`, `zapisanie publicznej wartości` oraz `wywołanie metody z jednym argumentem`, zarówno standardowym jak i refleksyjnym sposobem. Każda z czynności wykonywana była 10000000 razy.
 
