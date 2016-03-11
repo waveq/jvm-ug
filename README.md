@@ -37,9 +37,11 @@ Po podzieleniu uzyskanych wyników przez ilość wywołań otrzymamy średni cza
 Native get public value, averaged each:            0.7486064 ns
 Native set public value, averaged each:            0.8046402 ns
 Native invoke method, averaged each:               0.5874937 ns
-
+```
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-03-a/Screenn%20Shot%202016-03-11%20at%2019.55.png)
+```
 Reflection get public value, averaged each:        163.6231257 ns
 Reflection set public value, averaged each:        168.3529238 ns
 Reflection invoke method, averaged each:           504.8142527 ns
 ```
-
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-03-a/Screenn%20Shot%202016-03-11%20at%2019.55.23.png)
