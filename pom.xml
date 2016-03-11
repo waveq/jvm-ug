@@ -34,7 +34,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>reflection.ReflectionTest</mainClass>
+					<mainClass>application.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

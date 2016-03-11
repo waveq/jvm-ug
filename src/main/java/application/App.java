@@ -31,4 +31,10 @@ public class App {
 		app.runService();
 	}
 
+
+	/*
+	04:11:43 {lab-04} ~/workspace/jvmInternals/jvm-ug$ jar cfm target/agent.jar myManifest -C target/classes/ .
+
+	04:11:43 {lab-04} ~/workspace/jvmInternals/jvm-ug$ java -javaagent:target/agent.jar -cp target/classes/. application.App
+	 */
 }
