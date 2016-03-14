@@ -1,52 +1,27 @@
 package object;
 
+
 public class FunnyObject {
 
 	private String shortString = "Hello.";
 	private int primitiveInt = 15;
-	private Integer IntObject = 15;
-	private long primiviteLong = 30L;
-	private Long longObject = 30L;
+	private long primitiveLong = 30l;
+	private Integer hugeInteger= 9998;
+	private String loooongString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed "
+			+ "do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+			+ " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris "
+			+ "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit "
+			+ "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint "
+			+ "occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim "
+			+ "id est laborum.";
 
-	public String publicString = "Hello in public.";
 
 	public String getShortString() {
 		return shortString;
-	}
-
-	public void setShortString(String shortString) {
-		this.shortString = shortString;
 	}
 
 	public int getPrimitiveInt() {
 		return primitiveInt;
 	}
 
-	public void setPrimitiveInt(int primitiveInt) {
-		this.primitiveInt = primitiveInt;
-	}
-
-	public Integer getIntObject() {
-		return IntObject;
-	}
-
-	public void setIntObject(Integer intObject) {
-		IntObject = intObject;
-	}
-
-	public long getPrimiviteLong() {
-		return primiviteLong;
-	}
-
-	public void setPrimiviteLong(long primiviteLong) {
-		this.primiviteLong = primiviteLong;
-	}
-
-	public Long getLongObject() {
-		return longObject;
-	}
-
-	public void setLongObject(Long longObject) {
-		this.longObject = longObject;
-	}
 }
