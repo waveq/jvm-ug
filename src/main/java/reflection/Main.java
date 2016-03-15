@@ -96,11 +96,11 @@ public class Main {
 
 
 		worstIterationIndex = pojoToJsonJackson.indexOf(Collections.max(pojoToJsonJackson));
-		System.out.println(String.format(REMOVING_WORST, GSON, Collections.max(pojoToJsonJackson), worstIterationIndex));
+		System.out.println(String.format(REMOVING_WORST, JACKSON, Collections.max(pojoToJsonJackson), worstIterationIndex));
 		pojoToJsonJackson.remove(pojoToJsonJackson.indexOf(Collections.max(pojoToJsonJackson)));
 
 		bestIterationIndex = getBestIterationIndexBeforeWorstDeleted(worstIterationIndex, pojoToJsonJackson);
-		System.out.println(String.format(REMOVING_BEST, GSON, Collections.min(pojoToJsonJackson), bestIterationIndex));
+		System.out.println(String.format(REMOVING_BEST, JACKSON, Collections.min(pojoToJsonJackson), bestIterationIndex));
 		pojoToJsonJackson.remove(pojoToJsonJackson.indexOf(Collections.min(pojoToJsonJackson)));
 	}
 
