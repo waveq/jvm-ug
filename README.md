@@ -13,7 +13,7 @@ Java: 1.8.0_45
 ```
 
 ### Przebieg testu:
-Program iterował dziesięciokrotnie w pętli, w każdej z nich wykonywane było parsowanie klasy do jsona za pomoca refleksji, `Gsona` i `Jacksona`. W każdym przebiegu pętli parsowanie wykonywane było 1000000, razy każdym sposobem.
+Program iterował dziesięciokrotnie w pętli, w każdej z nich wykonywane było parsowanie klasy do jsona za pomoca refleksji, `Gsona` i `Jacksona`. W każdym przebiegu pętli parsowanie wykonywane było 1000000 razy, każdym sposobem.
 
 Najgorsze i najlepsze czasy nie są uwzględniane w wynikach.
 ```
