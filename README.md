@@ -16,7 +16,7 @@ Java: 1.8.0_45
 Program iterował dziesięciokrotnie w pętli, w każdej z nich wykonywane było parsowanie klasy do jsona za pomoca refleksji, `Gsona` i `Jacksona`. W każdym przebiegu pętli parsowanie wykonywane było 1000000 razy, każdym sposobem.
 
 
-### Wyniki
+### Wyniki:
 Najgorsze i najlepsze czasy nie są uwzględniane w wynikach.
 ```
 Removing worst result from Reflection:  1806903300 ns  - which was in 0 iteration
