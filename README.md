@@ -37,7 +37,9 @@ Gson, averaged:         8626714761 ns
 Jackson, averaged:      782904115 ns
 ```
 
-Gson był prawie **7** razy wolniejszy niż wykonanie tego samego autorskim sposobem. Jackson był natomiast **11** razy szybszy od refleksyjnego betonu.
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-03-b/Screen%20Shot%202016-03-15%20at%2022.15.30.png)
+
+Gson był prawie **7** razy wolniejszy niż wykonanie tego samego autorskim sposobem. Jackson był natomiast **1.6** raza szybszy od refleksyjnego betonu.
 
 ### Output generowany przez biblioteki:
 [Refleksja](output/reflection.json)
