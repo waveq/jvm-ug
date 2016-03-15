@@ -36,7 +36,7 @@ Jackson, averaged:      782904115 ns
 
 Parsowany [obiekt](src/main/java/object/FunnyObject.java) zawierał zarówno publiczne jak i prywatne pola typu: `String`, `int`, `long` i `Integer`. Niektóre z prywatnych pól nie miały getterów, więc trzeba było ustawić im odpowiedni dostęp.
 
-Gson był prawie **7** razy wolniejszy niż wykonanie tego samego refleksją. Jackson był natomiast **11** razy szybszy od refleksyjnego betonu.
+Gson był prawie **7** razy wolniejszy niż wykonanie tego samego autorskim sposobem. Jackson był natomiast **11** razy szybszy od refleksyjnego betonu.
 
 ### Output generowany przez biblioteki:
 [Refleksja](output/reflection.json)
