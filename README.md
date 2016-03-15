@@ -15,6 +15,7 @@ Java: 1.8.0_45
 ### Przebieg testu:
 Program iterował dziesięciokrotnie w pętli, w każdej z nich wykonywane było parsowanie klasy do jsona za pomoca refleksji, `Gsona` i `Jacksona`. W każdym przebiegu pętli parsowanie wykonywane było 1000000 razy, każdym sposobem.
 
+Parsowany [obiekt](src/main/java/object/FunnyObject.java) zawierał zarówno publiczne jak i prywatne pola typu: `String`, `int`, `long` i `Integer`. Niektóre z prywatnych pól nie miały getterów, więc trzeba było ustawić im odpowiedni dostęp.
 
 ### Wyniki:
 Najgorsze i najlepsze czasy nie są uwzględniane w wynikach.
@@ -35,8 +36,6 @@ Reflection, averaged:   1245962980 ns
 Gson, averaged:         8626714761 ns
 Jackson, averaged:      782904115 ns
 ```
-
-Parsowany [obiekt](src/main/java/object/FunnyObject.java) zawierał zarówno publiczne jak i prywatne pola typu: `String`, `int`, `long` i `Integer`. Niektóre z prywatnych pól nie miały getterów, więc trzeba było ustawić im odpowiedni dostęp.
 
 Gson był prawie **7** razy wolniejszy niż wykonanie tego samego autorskim sposobem. Jackson był natomiast **11** razy szybszy od refleksyjnego betonu.
 
