@@ -1,9 +1,12 @@
 package jsonConverter;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
 
 import com.google.gson.Gson;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.map.ObjectMapper;
 
 public class PojoToJson {
 
@@ -12,32 +15,55 @@ public class PojoToJson {
 	private static final String COLON = ":";
 	private static final String COMMA = ",";
 	private static final String EXCEPTION = "!!! Ups, błąd przy wyciąganiu wartości pola. !!!";
+	private static final String EXCEPTION_JACKSON = "!!! Ups, błąd przy jacksonowaniu. !!!";
 
-	Gson gson;
+	private Gson gson;
+	private ObjectMapper mapper = new ObjectMapper();
+
+	public PojoToJson(){
+		gson = new Gson();
+
+		mapper.setVisibilityChecker(mapper.getSerializationConfig().getDefaultVisibilityChecker()
+				.withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+				.withGetterVisibility(JsonAutoDetect.Visibility.NONE)
+				.withSetterVisibility(JsonAutoDetect.Visibility.NONE)
+				.withCreatorVisibility(JsonAutoDetect.Visibility.NONE));
+	}
 
 	public String pojoToJsonWithReflection(Object objectInstance) {
 		Class objectClass = objectInstance.getClass();
 
 		Field[] fields = objectClass.getDeclaredFields();
 		StringBuilder builder = new StringBuilder("{");
-		for(int i=0;i<fields.length;i++) {
-			if(isCollection(fields[i])) {
-				continue;
-			}
-			fields[i].setAccessible(true);
-			builder.append(QUOTE_MARK).append(fields[i].getName()).append(QUOTE_MARK).append(COLON);
+		boolean stringField;
+		try {
 
-			try {
-				builder.append(QUOTE_MARK).append(fields[i].get(objectInstance).toString()).append(QUOTE_MARK);
-			} catch (IllegalAccessException e) {
-				System.out.println(EXCEPTION);
-			}
+			for(int i=0;i<fields.length;i++) {
+				if(isCollection(fields[i])) {
+					continue;
+				}
 
-			if(i < fields.length - 1 && !isCollection(fields[i+1])) {
-				builder.append(COMMA);
-			} else {
-				builder.append(CLOSING_BRACKET);
+				fields[i].setAccessible(true);
+				stringField = fields[i].get(objectInstance) instanceof String;
+
+				builder.append(QUOTE_MARK).append(fields[i].getName()).append(QUOTE_MARK).append(COLON);
+
+				if(stringField) {
+					builder.append(QUOTE_MARK);
+				}
+				builder.append(fields[i].get(objectInstance).toString());
+				if(stringField) {
+					builder.append(QUOTE_MARK);
+				}
+
+				if(i < fields.length - 1 && !isCollection(fields[i + 1])) {
+					builder.append(COMMA);
+				} else {
+					builder.append(CLOSING_BRACKET);
+				}
 			}
+		} catch (IllegalAccessException e) {
+			System.out.println(EXCEPTION);
 		}
 		return builder.toString();
 	}
@@ -47,9 +73,16 @@ public class PojoToJson {
 	}
 
 	public String pojoToJsonWithGson(Object objectInstance) {
-		gson = new Gson();
-		String json = gson.toJson(objectInstance);
+		return gson.toJson(objectInstance);
+	}
 
-		return json;
+	public String pojoToJsonWithJackson(Object objectInstance) {
+		try {
+			return mapper.writeValueAsString(objectInstance);
+		} catch (IOException e) {
+			System.out.println(EXCEPTION_JACKSON);
+		}
+
+		return null;
 	}
 }

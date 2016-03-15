@@ -6,7 +6,7 @@ public class FunnyObject {
 	private String shortString = "Hello.";
 	private int primitiveInt = 15;
 	private long primitiveLong = 30l;
-	private Integer hugeInteger= 9998;
+	public Integer hugePublicInteger= 9998;
 	private String loooongString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed "
 			+ "do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 			+ " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris "
@@ -22,6 +22,10 @@ public class FunnyObject {
 
 	public int getPrimitiveInt() {
 		return primitiveInt;
+	}
+
+	public String getLoooongString() {
+		return loooongString;
 	}
 
 }
