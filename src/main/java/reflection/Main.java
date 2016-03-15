@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Main {
 
-	private static final long NUMBER_OF_INVOKES = 100000;
+	private static final long NUMBER_OF_INVOKES = 1000000;
 
 	private static final String REFLECTION_FILE_NAME = "reflection.json";
 	private static final String GSON_FILE_NAME = "gson.json";
@@ -43,7 +43,7 @@ public class Main {
 	public static void main(String args[]) {
 
 		saveJsonToFile();
-		for(int i = 1;i<=5;i++) {
+		for(int i = 1;i<=10;i++) {
 			printConfigurtion(i);
 			performReflectionTests();
 			performGsonTests();
