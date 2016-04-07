@@ -14,7 +14,10 @@ public class Main {
 	private static final String DATE_FORMAT = "dd-MM-yyyy";
 	private static final String SAFE = "Safe method";
 	private static final String UNSAFE = "Unsafe method";
+	private static final String EXCEPTION_MESSAGE = "Exception raised in %s: %s";
 	private static final int NUMBER_OF_THREADS = 30;
+
+	private static int numberOfExceptions = 0;
 
 	private static final ThreadLocal<DateFormat> dateFormatThreadLocal = new ThreadLocal<DateFormat>(){
 		@Override
@@ -23,24 +26,32 @@ public class Main {
 		}
 	};
 
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[])  {
 		threadSafeSimpleDateFormat(TEXT_DATE);
 		notThreadSafeSimpleDateFormat(TEXT_DATE);
-
 	}
 
-	private static void notThreadSafeSimpleDateFormat(String date) throws Exception {
+	private static void notThreadSafeSimpleDateFormat(String date) {
 		System.out.println(UNSAFE);
 
 		final DateFormat format = new SimpleDateFormat(DATE_FORMAT);
 		Callable<Date> task = () -> format.parse(date);
-		testIt(task);
+
+		try {
+			testIt(task);
+		} catch (Exception e) {
+			System.out.println(String.format(EXCEPTION_MESSAGE, UNSAFE, e.getMessage()));
+		}
 	}
 
-	private static void threadSafeSimpleDateFormat(String date) throws Exception {
+	private static void threadSafeSimpleDateFormat(String date) {
 		System.out.println(SAFE);
 		Callable<Date> task = () -> convert(date);
-		testIt(task);
+		try {
+			testIt(task);
+		} catch (Exception e) {
+			System.out.println(String.format(EXCEPTION_MESSAGE, SAFE, e.getMessage()));
+		}
 	}
 
 	private static void testIt(Callable<Date> task) throws Exception {
