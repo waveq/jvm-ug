@@ -17,8 +17,6 @@ public class Main {
 	private static final String EXCEPTION_MESSAGE = "Exception raised in %s: %s";
 	private static final int NUMBER_OF_THREADS = 30;
 
-	private static int numberOfExceptions = 0;
-
 	private static final ThreadLocal<DateFormat> dateFormatThreadLocal = new ThreadLocal<DateFormat>(){
 		@Override
 		protected DateFormat initialValue() {
@@ -47,6 +45,7 @@ public class Main {
 	private static void threadSafeSimpleDateFormat(String date) {
 		System.out.println(SAFE);
 		Callable<Date> task = () -> convert(date);
+
 		try {
 			testIt(task);
 		} catch (Exception e) {
