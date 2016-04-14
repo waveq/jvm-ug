@@ -1,4 +1,9 @@
 # jvm-ug
 
 ### Wykonanie programu
-`mvn exec:java`
+
+```
+mvn compile
+mvn assembly:assembly
+mvn exec:exec
+```

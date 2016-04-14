@@ -9,7 +9,7 @@ import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 
 
-public class JavaAssistSimpleTransformer implements ClassFileTransformer {
+public class Transformer implements ClassFileTransformer {
 
 	private static final String SLEEPER_CLASS_NAME = "Sleeper";
 	private static final String SLEEP_FOR_PARAM_TIME = "sleepForParamTime";
