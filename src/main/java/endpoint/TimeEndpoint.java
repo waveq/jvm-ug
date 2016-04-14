@@ -15,8 +15,8 @@ public class TimeEndpoint {
 	private static final int MULTIPLIER_ONE = 1;
 	private static final String TIME_REQUIRED = "Time required: %s";
 
-	private static final String FIRST_PATH = "time/{time:[0-9]*}";
-	private static final String SECOND_PATH = "time2/{time:[0-9]*}";
+	private static final String FIRST_PATH = "multiply1/{time:[0-9]*}";
+	private static final String SECOND_PATH = "multiply2/{time:[0-9]*}";
 	private static final String TIME = "time";
 
 	@Path(FIRST_PATH)
