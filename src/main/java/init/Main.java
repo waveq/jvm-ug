@@ -10,7 +10,8 @@ import java.net.URI;
 public class Main {
 	private static final String BASE_URI = "http://localhost:8080/timetest/";
 	private static final String PACKAGE_NAME = "endpoint";
-	private static final String INIT_MESSAGE = "Jersey app started with WADL available at %sapplication.wadl\n Hit enter to stop it..";
+	private static final String INIT_MESSAGE = "WADL is available at %sapplication.wadl\nPress any button to exit.";
+	private static final String PATH_MESSAGE = "Try going to http://localhost:8080/timetest/time/<your number> or http://localhost:8080/timetest/time/<your number>.";
 
 	public static HttpServer startServer() {
 		final ResourceConfig resourceConfig = new ResourceConfig().packages(PACKAGE_NAME);
@@ -20,7 +21,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		final HttpServer server = startServer();
 		System.out.println(String.format(INIT_MESSAGE, BASE_URI));
-
+		System.out.println(PATH_MESSAGE);
 		System.in.read();
 		server.stop();
 	}

@@ -61,7 +61,7 @@
 						<argument>-javaagent:target/${project.build.finalName}-jar-with-dependencies.jar</argument>
 						<argument>-classpath</argument>
 						<classpath/>
-						<argument>com.lpiotrko.main.Main</argument>
+						<argument>init.Main</argument>
 					</arguments>
 				</configuration>
 			</plugin>
@@ -74,7 +74,7 @@
 						<manifest>
 						</manifest>
 						<manifestEntries>
-							<Premain-Class>com.lpiotrko.main.Agent</Premain-Class>
+							<Premain-Class>init.Agent</Premain-Class>
 						</manifestEntries>
 					</archive>
 					<descriptorRefs>
