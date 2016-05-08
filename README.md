@@ -1,15 +1,13 @@
 # jvm-ug
 
 ### Wykonanie programu
+`mvn exec:java`
 
+### Informacje o maszynie, na której wykonywany był test:
 ```
-mvn compile
-mvn assembly:assembly
-mvn exec:exec
+Procesor: 2,6 GHz Intel Core i7
+Pamięć: 16 GB 1600 MHz DDR3
+Dysk: SSD
+System: OS X Yosemite 10.10.5
+Java: 1.8.0_45
 ```
-
-Aplikacja działa pod linkami:
-
-`http://localhost:8080/lab-07/multiply1/<liczba>`
-
-`http://localhost:8080/lab-07/multiply2/<liczba>`
