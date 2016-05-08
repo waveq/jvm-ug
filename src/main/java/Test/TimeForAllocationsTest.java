@@ -1,8 +1,6 @@
 package Test;
-import ObjectGenerator.*;
 
-
-public class TimeForAllocationsTest implements Runnable {
+public class TimeForAllocationsTest extends AbstractTest implements Runnable {
 
 	private static final String TIME_FOR_ALLOCATION_MS = "#> [%s] [Threads: %s] [Object Size Constant: %s]: time for allocation %s objects: %s ms.";
 	private static final int NUMBER_OF_OBJECTS = 1000;
@@ -35,13 +33,5 @@ public class TimeForAllocationsTest implements Runnable {
 			objectsCreated++;
 		}
 		return System.nanoTime() - startTime;
-	}
-
-	private static void allocObject(boolean constantSize) {
-		if(constantSize) {
-			MemoryEater.alloc(1);
-		} else {
-			MemoryEater.allocRandom();
-		}
 	}
 }

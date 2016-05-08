@@ -1,8 +1,6 @@
 package Test;
 
-import ObjectGenerator.MemoryEater;
-
-public class AllocationsInTimeTest implements Runnable {
+public class AllocationsInTimeTest extends AbstractTest implements Runnable {
 
 	private static final String OBJECTS_CREATED = "#> [%s] [Threads: %s] [Object Size Constant: %s]: %s objects created in %s seconds.";
 	private static final int SLEEP_TIME = 5000;
@@ -37,14 +35,6 @@ public class AllocationsInTimeTest implements Runnable {
 		while (keepAllocating) {
 			allocObject(constantSize);
 			count++;
-		}
-	}
-
-	private static void allocObject(boolean constantSize) {
-		if(constantSize) {
-			MemoryEater.alloc(1);
-		} else {
-			MemoryEater.allocRandom();
 		}
 	}
 }
