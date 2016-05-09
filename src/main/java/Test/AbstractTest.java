@@ -6,9 +6,9 @@ public abstract class AbstractTest {
 
 	protected static void allocObject(boolean constantSize) {
 		if(constantSize) {
-			MemoryEater.alloc(1);
+			MemoryEater.alloc(20);
 		} else {
-			MemoryEater.allocRandom();
+			MemoryEater.allocDifferent();
 		}
 	}
 }

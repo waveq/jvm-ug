@@ -5,8 +5,7 @@ import java.util.Random;
 public class MemoryEater {
 
 	private static Random random = new Random();
-	private static final int MINIMUM = 1;
-	private static final int MAXIMUM = 6;
+	private static int counter = 1;
 
 	private int[] buffer;
 
@@ -18,11 +17,15 @@ public class MemoryEater {
 		return new MemoryEater(sizeInMb*(1024*1024)/4);
 	}
 
-	public static MemoryEater allocRandom(){
-		return new MemoryEater(getRandom()*(1024*1024)/4);
+	public static MemoryEater allocDifferent(){
+		return new MemoryEater(getNumber()*(1024*1024)/4);
 	}
 
-	private static int getRandom() {
-		return random.nextInt((MAXIMUM - MINIMUM) + 1) + MINIMUM;
+	private static int getNumber() {
+		counter ++;
+		if(counter == 20) {
+			counter = 1;
+		}
+		return counter;
 	}
 }

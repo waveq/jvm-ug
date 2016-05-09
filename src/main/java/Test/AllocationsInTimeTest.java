@@ -3,7 +3,7 @@ package Test;
 public class AllocationsInTimeTest extends AbstractTest implements Runnable {
 
 	private static final String OBJECTS_CREATED = "#> [%s] [Threads: %s] [Object Size Constant: %s]: %s objects created in %s seconds.";
-	private static final int SLEEP_TIME = 5000;
+	private static final int SLEEP_TIME = 15000;
 
 	private static boolean keepAllocating;
 	private static long count = 0;
@@ -15,6 +15,9 @@ public class AllocationsInTimeTest extends AbstractTest implements Runnable {
 		count = 0;
 		AllocationsInTimeTest.constantSize = constantSize;
 
+		if(numberOfThreads == 1) {
+
+		}
 		allocateInNewThread(numberOfThreads);
 		Thread.sleep(20);
 
