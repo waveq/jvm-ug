@@ -10,7 +10,7 @@ public class AllocationsInTimeTest extends AbstractTest implements Runnable {
 	private static boolean constantSize;
 
 
-	public static long count(int numberOfThreads, boolean constantSize) throws InterruptedException {
+	public static long execute(int numberOfThreads, boolean constantSize) throws InterruptedException {
 		keepAllocating = true;
 		count = 0;
 		AllocationsInTimeTest.constantSize = constantSize;

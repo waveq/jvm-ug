@@ -9,7 +9,7 @@ public class TimeForAllocationsTest extends AbstractTest implements Runnable {
 	private static long objectsCreated = 0;
 	private static boolean constantSize;
 
-	public static void count(int numberOfThreads, boolean constantSize) throws InterruptedException {
+	public static void execute(int numberOfThreads, boolean constantSize) throws InterruptedException {
 		time = 0;
 		objectsCreated = 0;
 		TimeForAllocationsTest.constantSize = constantSize;
