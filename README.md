@@ -28,9 +28,22 @@ Test 4: Alokacje w 5 wątkach, obiekty o zmiennym rozmiarze
 ```
 
 ### Test 1 Alokacje w 1 wątku, obiekty o stałym rozmiarze:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.28.png)
 
-### Test 2: Alokacje w 5 wątkach, obiekty o stałym rozmiarze:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.28.png)
+
+
+### Test 2: Alokacje w 4 wątkach, obiekty o stałym rozmiarze:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.48.png)
+
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.38.png)
 
 ### Test 3: Alokacje w 1 wątku, obiekty o zmiennym rozmiarze:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.56.png)
 
-### Test 4: Alokacje w 5 wątkach, obiekty o zmiennym rozmiarze:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.48.png)
+
+### Test 4: Alokacje w 4 wątkach, obiekty o zmiennym rozmiarze:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.14.png)
+
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.56.png)
