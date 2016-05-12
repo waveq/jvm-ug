@@ -29,7 +29,8 @@ Test 4: Alokacje w 4 wątkach, obiekty o zmiennym rozmiarze
 
 ### Przebieg testu:
 ```
-Każdy z testów był uruchamiany na świeżej wirtualnej maszynie. Testy w których rozmiar obiektów był stały, wynosił 20MB.
+Każdy z testów był uruchamiany na świeżej wirtualnej maszynie.
+Testy w których rozmiar obiektów był stały, wynosił 20MB.
 Testy z obiektami o zmiennym rozmiarze alokowały obiekty o rozmiarze wielkości 1MB - 20MB.
 ```
 
