@@ -15,9 +15,6 @@ public class TimeForAllocationsTest extends AbstractTest implements Runnable {
 
 	private static int threadsFinishedCounter = 0;
 	public static void execute(int numberOfThreads, boolean constantSize) throws InterruptedException {
-		startTime = 0;
-		endTime = 0;
-		objectsCreated = 0;
 		threadCount = numberOfThreads;
 		TimeForAllocationsTest.constantSize = constantSize;
 
@@ -25,7 +22,9 @@ public class TimeForAllocationsTest extends AbstractTest implements Runnable {
 		for(int i=0; i<numberOfThreads; i++){
 			new Thread(new TimeForAllocationsTest()).start();
 		}
-		Thread.sleep(SLEEP_TIME);
+		if(endTime < 1) {
+			Thread.sleep(SLEEP_TIME);
+		}
 		long resultTime = endTime- startTime;
 
 		System.out.println(String.format(TIME_FOR_ALLOCATION_MS, TimeForAllocationsTest.class.getName(), numberOfThreads, constantSize, NUMBER_OF_OBJECTS, resultTime/SECONDS_DIVIDER));

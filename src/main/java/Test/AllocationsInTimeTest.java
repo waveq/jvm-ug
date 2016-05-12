@@ -15,9 +15,6 @@ public class AllocationsInTimeTest extends AbstractTest implements Runnable {
 		count = 0;
 		AllocationsInTimeTest.constantSize = constantSize;
 
-		if(numberOfThreads == 1) {
-
-		}
 		allocateInNewThread(numberOfThreads);
 		Thread.sleep(20);
 
