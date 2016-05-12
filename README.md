@@ -28,8 +28,10 @@ Test 4: Alokacje w 4 wątkach, obiekty o zmiennym rozmiarze
 ```
 
 ### Przebieg testu:
-Każdy z testów był uruchamiany na świeżej wirtualnej maszynie. Testy w których rozmiar obiektów był stały, wynosił on 20MB.
-Testy z obiektami o zmiennym rozmiarze alokowały obiekty o rozmiarze 1MB - 20MB.
+```
+Każdy z testów był uruchamiany na świeżej wirtualnej maszynie. Testy w których rozmiar obiektów był stały, wynosił 20MB.
+Testy z obiektami o zmiennym rozmiarze alokowały obiekty o rozmiarze wielkości 1MB - 20MB.
+```
 
 ### Test 1 Alokacje w 1 wątku, obiekty o stałym rozmiarze:
 ![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.28.png)
