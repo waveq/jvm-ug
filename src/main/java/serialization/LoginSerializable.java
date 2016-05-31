@@ -3,14 +3,14 @@ package serialization;
 import java.io.*;
 import java.util.Random;
 
-public class LoginExternalizable implements Externalizable {
+public class LoginSerializable implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private String username;
 	private String password;
 
-	public LoginExternalizable(){
+	public LoginSerializable(){
 		this.username = this.randomString();
 		this.password = this.randomString();
 	}
@@ -29,7 +29,7 @@ public class LoginExternalizable implements Externalizable {
 			return false;
 		}
 
-		final LoginExternalizable other = (LoginExternalizable) object;
+		final LoginSerializable other = (LoginSerializable) object;
 		if ((this.username == null) ? (other.username != null) : !this.username.equals(username)) {
 			return false;
 		}
@@ -48,17 +48,5 @@ public class LoginExternalizable implements Externalizable {
 			sb.append(chars[random.nextInt(chars.length)]);
 		}
 		return sb.toString();
-	}
-
-	@Override
-	public void writeExternal(ObjectOutput out) throws IOException {
-		out.writeObject(username);
-		out.writeObject(password);
-	}
-
-	@Override
-	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-		username = (String) in.readObject();
-		password = (String) in.readObject();
 	}
 }

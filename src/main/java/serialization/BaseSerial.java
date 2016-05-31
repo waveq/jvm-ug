@@ -2,20 +2,22 @@ package serialization;
 
 import java.util.List;
 
-public abstract class BaseSerial {
+public abstract class BaseSerial  {
 
-	public long testSerialization(List<LoginExternalizable> logins) {
+	public long testSerialization(List<LoginSerializable> logins, boolean one) {
 		long startTime = System.currentTimeMillis();
-		serialize(logins);
+		serialize(logins, one);
 		return System.currentTimeMillis() - startTime;
 	}
 
-	public long testDeserialization(List<LoginExternalizable> logins) {
+
+	public long testDeserialization(boolean one) {
 		long startTime = System.currentTimeMillis();
-		deserialize();
+		deserialize(one);
 		return System.currentTimeMillis() - startTime;
 	}
 
-	public abstract void serialize(List<LoginExternalizable> logins);
-	public abstract List<LoginExternalizable> deserialize();
+	public abstract void serialize(List<LoginSerializable> logins, boolean one);
+	public abstract List<LoginSerializable> deserialize(boolean one);
+
 }
