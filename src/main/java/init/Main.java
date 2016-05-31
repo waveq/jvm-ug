@@ -1,46 +1,55 @@
 package init;
 
-import Test.AllocationsInTimeTest;
-import Test.TimeForAllocationsTest;
+import serialization.*;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
-	private static final Scanner scanner = new Scanner(System.in);
-	private static final String WELCOME_MESSAGE = "To execute test type its number.\n\n"
-			+ "Test 1: Allocations in 1 thread, objects with constant size\n"
-			+ "11 - Time needed for allocating n objects.\n12 - Number of allocations in 15 seconds.\n\n"
+	private static final String SERIALIZATION = "Serialization: ";
+	private static final String DESERIALIZATION = "Deserialization: ";
 
-			+ "Test 1: Allocations in 5 threads, objects with constant size\n"
-			+ "21 - Time needed for allocating n objects.\n22 - Number of allocations in 15 seconds.\n\n"
+	private static int numberOfTests = 10;
+	private static int numberOfLogins = 1000;
 
-			+ "Test 3: Allocations in 1 threads, objects with different sizes\n"
-			+ "31 - Time needed for allocating n objects.\n32 - Number of allocations in 15 seconds.\n\n"
+	public static List<LoginExternalizable> logins = new ArrayList();
+	public static List<BaseSerial> serializers = new ArrayList();
 
-			+ "Test 4: Allocations in 5 threads, objects with different sizes\n"
-			+ "41 - Time needed for allocating n objects.\n42 - Number of allocations in 15 seconds.\n\n";
+	public static void main(String[] args) {
+		for (int i = 0; i < numberOfLogins; i++) {
+			LoginExternalizable login = new LoginExternalizable();
+			logins.add(login);
+		}
 
-	public static void main(String[] args) throws InterruptedException {
+		serializers.add(new Serializer());
+		serializers.add(new Jackson());
+		serializers.add(new GsonConverter());
+		serializers.add(new Externalizer());
 
-		System.out.println(WELCOME_MESSAGE);
-		int response = scanner.nextInt();
-		if(response == 11) {
-			TimeForAllocationsTest.execute(1, true);
-		} else if(response == 12) {
-			AllocationsInTimeTest.execute(1, true);
-		} else if(response == 21) {
-			TimeForAllocationsTest.execute(4, true);
-		} else if(response == 22) {
-			AllocationsInTimeTest.execute(4, true);
-		} else if(response == 31) {
-			TimeForAllocationsTest.execute(1, false);
-		} else if(response == 32) {
-			AllocationsInTimeTest.execute(1, false);
-		} else if(response == 41) {
-			TimeForAllocationsTest.execute(4, false);
-		} else if(response == 42) {
-			AllocationsInTimeTest.execute(4, false);
+		System.out.println(SERIALIZATION);
+		testSerialization();
+		System.out.println(DESERIALIZATION);
+		testDeserialization();
+	}
+
+	static public void testSerialization() {
+		for (BaseSerial serializer : serializers) {
+			long processingTime = 0;
+			for (int i = 0; i < numberOfTests; i++) {
+				processingTime += serializer.testSerialization(logins);
+			}
+			double average = processingTime / numberOfTests;
+		}
+	}
+
+	static public void testDeserialization() {
+		for (BaseSerial serializer : serializers) {
+			long processingTime = 0;
+			for (int i = 0; i < numberOfTests; i++) {
+				processingTime += serializer.testDeserialization(logins);
+			}
+			double average = processingTime / numberOfTests;
 		}
 	}
 }
