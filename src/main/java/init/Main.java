@@ -9,7 +9,7 @@ public class Main {
 
 	private static final String SERIALIZATION = "\nSerialization, number of objects: %s.";
 	private static final String DESERIALIZATION = "\nDeserialization, number of objects: %s.";
-	private static final String RESULT = "[%s]: time: %s ns, average: %s";
+	private static final String RESULT = "[%s]: time: %s ns";
 
 	private static int numberOfTests = 100;
 	private static int numberOfFirstIterationObjects = 10;
@@ -46,6 +46,7 @@ public class Main {
 		serializers.add(new Serializer());
 		serializers.add(new Jackson());
 		serializers.add(new GsonConverter());
+		serializers.add(new JAXB());
 
 		System.out.println(String.format(SERIALIZATION, 1));
 		testSerialization(loginsSerializableZeroIteration, loginsExternalizableZeroIteration);
