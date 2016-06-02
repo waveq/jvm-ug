@@ -19,38 +19,13 @@ Java(TM) SE Runtime Environment (build 1.8.0_45-b14)
 Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
 ```
 
-### Testy:
+### Przebieg testów:
 ```
-Test 1: Alokacje w 1 wątku, obiekty o stałym rozmiarze
-Test 2: Alokacje w 4 wątkach, obiekty o stałym rozmiarze
-Test 3: Alokacje w 1 wątku, obiekty o zmiennym rozmiarze
-Test 4: Alokacje w 4 wątkach, obiekty o zmiennym rozmiarze
+Wykonane zostały testy serializacji dla 1, 10 oraz 10000 obiektów czterema metodami. Każdy z testów został wykonany 100 razy, by nieco uśrednić wyniki.
 ```
+### Wyniki:
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09//charts/1%20object%20serialization.png)
 
-### Przebieg testu:
-```
-Każdy z testów był uruchamiany na świeżej wirtualnej maszynie.
-Testy w których rozmiar obiektów był stały, wynosił 20MB.
-Testy z obiektami o zmiennym rozmiarze alokowały obiekty o rozmiarze wielkości 1MB - 20MB.
-```
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/10%20objects%20serialization.png)
 
-### Test 1 Alokacje w 1 wątku, obiekty o stałym rozmiarze:
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.28.png)
-
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.28.png)
-
-
-### Test 2: Alokacje w 4 wątkach, obiekty o stałym rozmiarze:
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.48.png)
-
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.38.png)
-
-### Test 3: Alokacje w 1 wątku, obiekty o zmiennym rozmiarze:
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.46.56.png)
-
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.48.png)
-
-### Test 4: Alokacje w 4 wątkach, obiekty o zmiennym rozmiarze:
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.14.png)
-
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/Screen%20Shot%202016-05-09%20at%2022.47.56.png)
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/10000%20objects%20serialization.png)
