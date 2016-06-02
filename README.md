@@ -28,4 +28,4 @@ Wykonane zostały testy serializacji dla 1, 10 oraz 10000 obiektów czterema met
 
 ![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/10%20objects%20serialization.png)
 
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/10000%20objects%20serialization.png)
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-11/charts/10000%20objects%20serialization.png)
