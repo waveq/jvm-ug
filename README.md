@@ -29,3 +29,5 @@ Wykonane zostały testy serializacji dla 1, 10 oraz 10000 obiektów czterema met
 ![alt tag](https://github.com/waveq/jvm-ug/blob/lab-11/charts/10%20objects%20serialization.png)
 
 ![alt tag](https://github.com/waveq/jvm-ug/blob/lab-11/charts/10000%20objects%20serialization.png)
+
+Jak widać Jackson lepiej radzi sobie z wieloma obiektami niż z jednym. Używanie interfejsu Externalizable jest mniej efektywne niż Serializable, a biblioteki Jackson, Gson i JAXB stają się bardziej przydatne jeśli mam do serializacji dużo obiektów.
