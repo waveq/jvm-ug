@@ -24,8 +24,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
 Wykonane zostały testy serializacji dla 1, 10 oraz 10000 obiektów czterema metodami. Każdy z testów został wykonany 100 razy, by nieco uśrednić wyniki.
 ```
 ### Wyniki:
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09//charts/1%20object%20serialization.png)
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-11/charts/1%20objects%20serialization.png)
 
-![alt tag](https://github.com/waveq/jvm-ug/blob/lab-09/charts/10%20objects%20serialization.png)
+![alt tag](https://github.com/waveq/jvm-ug/blob/lab-11/charts/10%20objects%20serialization.png)
 
 ![alt tag](https://github.com/waveq/jvm-ug/blob/lab-11/charts/10000%20objects%20serialization.png)
